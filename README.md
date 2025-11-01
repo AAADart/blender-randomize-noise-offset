@@ -1,41 +1,44 @@
 # Randomize Noise Offset (Blender Add-on)
 
 **Graph Editor → N → Modifiers → Randomize Noise Offset**  
-Рандомізує параметр **Offset** у всіх **NOISE** F-Curve модифікаторах для активних екшенів вибраних об’єктів. Офсет задається в **секундах** (автоматично конвертується у кадри через FPS).
+Randomizes the **Offset** parameter of all **NOISE** F-Curve modifiers for the active Actions of selected objects.  
+The offset is defined in **seconds** (automatically converted to frames using FPS).
 
 ![Panel](assets/screenshot_panel.png)
 
-## Можливості
-- Працює по **вибраних об’єктах** (якщо їх немає — по активному).
-- **Seed** для відтворюваності.
-- **Offset Min/Max (s)** — діапазон у секундах, конвертується у кадри.
+## Features
+- Works on **selected objects** (or on the active one if none are selected).  
+- **Seed** for reproducibility.  
+- **Offset Min/Max (s)** — range in seconds, automatically converted to frames.
 
-## Вимоги
-- Blender **4.0+** (тестовано на 4.5)
+## Requirements
+- Blender **4.0+** (tested on 4.5)
 
-## Встановлення
-1. Завантаж ZIP реліз або зробіть ZIP з папки `addon/randomize_noise_offset`.
-2. У Blender: **Edit → Preferences → Add-ons → Install...** → оберіть ZIP → **Install**.
-3. Активуйте аддон (галочка).
-4. Відкрийте **Graph Editor**, натисніть **N** → вкладка **Modifiers** → секція **Randomize Noise Offset**.
+## Installation
+1. Download the release ZIP or create a ZIP from `addon/randomize_noise_offset`.  
+2. In Blender: **Edit → Preferences → Add-ons → Install...** → select the ZIP → **Install**.  
+3. Enable the add-on (check the box).  
+4. Open **Graph Editor**, press **N**, go to the **Modifiers** tab → section **Randomize Noise Offset**.
 
-## Використання
-1. Виділіть об’єкти з анімацією (або залиште активний об’єкт з Action).
-2. Вкажіть **Seed**, **Offset Min/Max (s)**.
-3. Натисніть **Randomize Noise Offset** — усі NOISE модифікатори отримають випадковий офсет.
+## Usage
+1. Select objects with animation (or keep one active object with an Action).  
+2. Set **Seed**, **Offset Min/Max (s)**.  
+3. Press **Randomize Noise Offset** — all NOISE modifiers will get a randomized offset.
 
-## Чому аддон?
-У Blender немає стандартної кнопки/оператора, який масово рандомізує Offset у NOISE модифікаторах. Без аддона це робиться лише вручну.
+## Why this add-on?
+Blender doesn’t provide a built-in operator to batch randomize the Offset of NOISE modifiers.  
+Without this add-on, the process must be done manually for each curve.
 
-## Доробки (ідеї)
-- Опція працювати **за виділеними F-curves** у Graph Editor.
-- Перемикач «працювати в **кадрах** замість секунд».
-- Додати фільтр за іменем Action / каналами.
+## Future ideas
+- Option to affect only **selected F-Curves** in the Graph Editor.  
+- Toggle to work in **frames** instead of seconds.  
+- Filter by Action name or specific curve channels.
 
-## Розробка
-- Код — в `addon/randomize_noise_offset/__init__.py`.
-- Стиль: PEP8, префікси класів `RNO_`/`GRAPH_`.
-- PR-и та issue — вітаються!
+## Development
+- Code: `addon/randomize_noise_offset/__init__.py`  
+- Style: PEP8, class prefixes `RNO_` / `GRAPH_`  
+- Pull requests and issues are welcome!
 
-## Ліцензія
-MIT — див. [LICENSE](LICENSE).
+## License
+GPL-3.0-or-later (primary license for Blender Extensions)  
+MIT license also included — see [LICENSE](LICENSE).
